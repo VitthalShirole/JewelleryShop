@@ -1,0 +1,27 @@
+@using BOL;
+@{
+    ViewData["Title"] = "Subcategory Page";
+}
+<script>
+
+
+</script>
+
+
+<div>
+    <h1><b><u>Available Products</u></b></h1>
+    @{
+
+        List<Subcategory> catlist = (List<Subcategory>)ViewData["abc"];
+
+        <ol>
+            @foreach (Subcategory sub in catlist)
+            {
+            // <li> <a href="/subcategory/dbsubcategory/@sub.SubName">@sub.SubName</a></li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Subcategory" asp-action="AllRing">@sub.SubName</a>
+                </li>
+            }
+        </ol>
+
+    }

@@ -1,6 +1,7 @@
 ﻿namespace BLL;
 using BOL;
 using DAL;
+using DBManager;
 using System.Collections.Generic;
 public class CatlogueManager
 {
@@ -15,6 +16,15 @@ public class CatlogueManager
 
     }
 
+    public List<Subcategory> dballsubcategories()
+    {
+
+        List<Subcategory> catlist = new List<Subcategory>();
+
+        catlist = DBManager.subcategories();
+
+        return catlist;
+    }
 
 
 

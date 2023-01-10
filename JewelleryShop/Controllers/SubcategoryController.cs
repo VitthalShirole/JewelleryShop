@@ -26,6 +26,23 @@ public class SubcategoryController : Controller
         return View();
     }
 
+    public IActionResult DBSubcategory()
+    {
+        CatlogueManager mgr = new CatlogueManager();
+        List<Subcategory> catlist = mgr.dballsubcategories();
+        this.ViewData["abc"] = catlist;
+
+        return View();
+
+    }
+
+    public IActionResult AllRing()
+    {
+        ///subcategory/dbsubcategory/@sub.SubName
+        return View();
+
+    }
+
     // public IActionResult Index()
     // {
     //     CatalogManager manager=new CatalogManager();
