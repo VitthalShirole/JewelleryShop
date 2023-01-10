@@ -1,0 +1,35 @@
+@using BOL;
+@{
+    ViewData["Title"] = "Subcategory Page";
+}
+
+
+
+<div>
+    <h1><b><u>Available Products</u></b></h1>
+    @{
+
+        List<Subcategory> catlist = (List<Subcategory>)ViewData["xyz"];
+
+        <ol>
+            @foreach (Subcategory sub in catlist)
+            {
+                <li> <a href="/subcategory/subcategory/@sub.SubName">@sub.SubName</a></li>
+            }
+        </ol>
+
+    }
+</div>
+
+
+@* <div>
+    <h2>Product Catalog</h2>
+    @{
+    List<Product> allProducts= (List<Product>)ViewData["products"];
+    <ol>
+    @foreach( Product product in allProducts){
+    <li> <a href="/products/details/@product.ProductId">@product.Title</a></li>
+    }
+    </ol>
+    }
+    </div> *@
